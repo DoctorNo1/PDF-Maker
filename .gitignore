@@ -1,6 +1,6 @@
+node_modules/
+.netlify/
+dist/
 .env
-__pycache__/
-*.py[cod]
-.venv/
-venv/
 *.pdf
+__pycache__/

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Maker bot</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fbfbfa;
+        --fg: #1a1a18;
+        --muted: #6b6b66;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #16161a;
+          --fg: #f2f2ef;
+          --muted: #9a9a94;
+        }
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: var(--bg);
+        color: var(--fg);
+        font: 16px/1.6 ui-sans-serif, system-ui, sans-serif;
+      }
+      main {
+        max-width: 32rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 0.5rem;
+      }
+      p {
+        color: var(--muted);
+        margin: 0.4rem 0;
+      }
+      code {
+        font-family: ui-monospace, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>📄 PDF Maker bot</h1>
+      <p>Телеграм-бот, який складає надіслані фотографії в один PDF.</p>
+      <p>Webhook живе на <code>/telegram</code>.</p>
+    </main>
+  </body>
+</html>
