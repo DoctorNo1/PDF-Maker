@@ -24,26 +24,18 @@
 
 ## Деплой на Netlify
 
-1. **Створити бота** в [@BotFather](https://t.me/BotFather), забрати токен.
-2. **Підключити репозиторій** на [app.netlify.com](https://app.netlify.com):
-   `Add new site → Import an existing project`. Build command і publish
-   directory підтягнуться з `netlify.toml`.
-3. **Змінні оточення** (Site configuration → Environment variables), див.
-   `.env.example`:
-   - `BOT_TOKEN` — токен від BotFather;
-   - `WEBHOOK_SECRET` — будь-який довгий рядок (бажано, але не обов'язково);
-   - `MAX_PHOTOS` — ліміт фото на один PDF (за замовчуванням 20).
-4. **Увімкнути Blobs**: Site configuration → Blobs (на новіших сайтах уже
-   увімкнено). У них зберігається черга фотографій.
-5. **Прив'язати webhook** після першого деплою:
+Покрокова інструкція — у [DEPLOY.md](DEPLOY.md). Коротко:
+
+1. Створити бота в [@BotFather](https://t.me/BotFather) і взяти токен.
+2. На [app.netlify.com](https://app.netlify.com) імпортувати цей репозиторій —
+   build command і publish directory підтягнуться з `netlify.toml`.
+3. Додати змінні оточення `BOT_TOKEN`, `WEBHOOK_SECRET`, `MAX_PHOTOS`
+   (див. `.env.example`) і передеплоїти сайт.
+4. Прив'язати webhook до задеплоєного сайту:
 
    ```bash
    BOT_TOKEN=... WEBHOOK_SECRET=... node scripts/set-webhook.mjs https://<твій-сайт>.netlify.app
    ```
-
-   Скрипт робить `setWebhook` на `/telegram` і реєструє меню команд.
-
-Перевірити прив'язку: `https://api.telegram.org/bot<TOKEN>/getWebhookInfo`.
 
 ## Локальна розробка
 
